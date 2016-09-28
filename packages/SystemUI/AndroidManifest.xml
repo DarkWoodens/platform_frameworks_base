@@ -190,6 +190,9 @@
     <!-- OmniJaws -->
     <uses-permission android:name="org.omnirom.omnijaws.READ_WEATHER" />
 
+    <!-- Weather Provider -->
+    <uses-permission android:name="cyanogenmod.permission.READ_WEATHER" />
+
     <application
         android:name=".SystemUIApplication"
         android:persistent="true"

@@ -98,6 +98,8 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
     private int mCustomLogo;
     private ImageView mCLogo;
 
+    private TextView mWeather;
+
     private int mIconSize;
     private int mIconHPadding;
 
@@ -168,6 +170,7 @@ public class StatusBarIconController extends StatusBarIconList implements Tunabl
         mDarkModeIconColorSingleTone = context.getColor(R.color.dark_mode_icon_color_single_tone);
         mLightModeIconColorSingleTone = context.getColor(R.color.light_mode_icon_color_single_tone);
         mCLogo = (ImageView) statusBar.findViewById(R.id.custom);
+	mWeather = (TextView) statusBar.findViewById(R.id.weather_temp);
         mHandler = new Handler();
         loadDimens();
 
@@ -636,6 +639,7 @@ Settings.System.getIntForUser(mContext.getContentResolver(),
                 isInArea(mTintArea, mBatteryMeterView) ? mDarkIntensity : 0);
         mClock.setTextColor(getTint(mTintArea, mClock, mIconTint));
         mCenterClock.setTextColor(getTint(mTintArea, mCenterClock, mIconTint));
+        mWeather.setTextColor(mIconTint);
         mLeftClock.setTextColor(getTint(mTintArea, mLeftClock, mIconTint));
         mNetworkTraffic.setDarkIntensity(mDarkIntensity);
         mBatteryLevelView.setTextColor(getTint(mTintArea, mBatteryLevelView, mIconTint));
