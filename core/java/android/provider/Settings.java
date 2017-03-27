@@ -4719,6 +4719,12 @@ public final class Settings {
         public static final String STATUSBAR_CLOCK_FONT_SIZE = "statusbar_clock_font_size";
 
         /**
+         * Maximum failed attempts for fingerprint input before showing warning
+         * @hide
+         */
+        public static final String FP_MAX_FAILED_ATTEMPTS = "fp_max_failed_attempts";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
