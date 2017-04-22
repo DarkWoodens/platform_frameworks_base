@@ -35,6 +35,9 @@
 #include "JNIHelp.h"
 #include "ScopedPrimitiveArray.h"
 
+#include <fd_utils-inl-extra.h>
+
+
 // Whitelist of open paths that the zygote is allowed to keep open.
 //
 // In addition to the paths listed here, all files ending with
@@ -57,7 +60,11 @@ static const char* kPathWhitelist[] = {
   "/dev/ion",
   "/dev/dri/renderD129", // Fixes b/31172436
   "/data/adb/socket_haploid32_root",
+#ifdef PATH_WHITELIST_EXTRA_H
+PATH_WHITELIST_EXTRA_H
+#endif
 };
+
 
 static const char* kFdPath = "/proc/self/fd";
 
